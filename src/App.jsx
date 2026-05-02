@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-// ─── Particles background ───────────────────────────────────────────────────
+/* ── Particles ─────────────────────────────────────────────────────────────── */
 function ParticlesBackground() {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src =
-      "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
+    script.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
     script.onload = () => {
       if (window.particlesJS) {
         window.particlesJS("particles-js", {
@@ -16,44 +15,24 @@ function ParticlesBackground() {
             shape: { type: "circle" },
             opacity: { value: 0.45, random: false },
             size: { value: 5, random: true },
-            line_linked: {
-              enable: true,
-              distance: 150,
-              color: "#9333ea",
-              opacity: 0.4,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: "none",
-              random: false,
-              straight: false,
-              out_mode: "out",
-              bounce: false,
-            },
+            line_linked: { enable: true, distance: 150, color: "#9333ea", opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 1.5, direction: "none", random: false, straight: false, out_mode: "out", bounce: false },
           },
           interactivity: {
             detect_on: "canvas",
-            events: {
-              onhover: { enable: true, mode: "grab" },
-              onclick: { enable: true, mode: "push" },
-            },
+            events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" } },
           },
           retina_detect: true,
         });
       }
     };
     document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
+    return () => { document.body.removeChild(script); };
   }, []);
-
   return <div id="particles-js" />;
 }
 
-// ─── Desktop Nav ─────────────────────────────────────────────────────────────
+/* ── Desktop Nav ───────────────────────────────────────────────────────────── */
 function DesktopNav() {
   const links = ["about", "education", "skills", "projects", "contact"];
   return (
@@ -61,39 +40,27 @@ function DesktopNav() {
       <div className="logo">NETHMI NAVODYA</div>
       <ul className="nav-links">
         {links.map((l) => (
-          <li key={l}>
-            <a href={`#${l}`}>{l.charAt(0).toUpperCase() + l.slice(1)}</a>
-          </li>
+          <li key={l}><a href={`#${l}`}>{l.charAt(0).toUpperCase() + l.slice(1)}</a></li>
         ))}
       </ul>
     </nav>
   );
 }
 
-// ─── Hamburger Nav ────────────────────────────────────────────────────────────
+/* ── Hamburger Nav ─────────────────────────────────────────────────────────── */
 function HamburgerNav() {
   const [open, setOpen] = useState(false);
   const links = ["about", "education", "skills", "projects", "contact"];
-
   return (
     <nav id="hamburger-nav">
       <div className="logo">Nethmi</div>
       <div className="hamburger-menu">
-        <div
-          className={`hamburger-icon${open ? " open" : ""}`}
-          onClick={() => setOpen(!open)}
-        >
-          <span />
-          <span />
-          <span />
+        <div className={`hamburger-icon${open ? " open" : ""}`} onClick={() => setOpen(!open)}>
+          <span /><span /><span />
         </div>
         <ul className={`menu-links${open ? " open" : ""}`}>
           {links.map((l) => (
-            <li key={l}>
-              <a href={`#${l}`} onClick={() => setOpen(false)}>
-                {l.charAt(0).toUpperCase() + l.slice(1)}
-              </a>
-            </li>
+            <li key={l}><a href={`#${l}`} onClick={() => setOpen(false)}>{l.charAt(0).toUpperCase() + l.slice(1)}</a></li>
           ))}
         </ul>
       </div>
@@ -101,59 +68,33 @@ function HamburgerNav() {
   );
 }
 
-// ─── Profile Section ──────────────────────────────────────────────────────────
+/* ── Profile ───────────────────────────────────────────────────────────────── */
 function Profile() {
   return (
     <section id="profile">
       <div className="section__pic-container">
-        <img
-          src="./assets/office-image-black.png"
-          alt="Nethmi Navodya profile picture"
-        />
+        <img src="/assets/office-image-black.png" alt="Nethmi Navodya profile picture" />
       </div>
       <div className="section__text">
         <p className="section__text__p1-hello">Hello, I'm</p>
         <h1 className="title">Nethmi Navodya</h1>
         <p className="section__text__p2">Software Engineering Undergraduate</p>
         <div className="btn-container">
-          <button
-            className="btn btn-color-2"
-            onClick={() => window.open("./assets/SE_2023_045.pdf")}
-          >
-            Download CV
-          </button>
-          <button
-            className="btn btn-color-1"
-            onClick={() => (window.location.href = "#contact")}
-          >
-            Contact Info
-          </button>
+          <button className="btn btn-color-2" onClick={() => window.open("/assets/SE_2023_045.pdf")}>Download CV</button>
+          <button className="btn btn-color-1" onClick={() => (window.location.href = "#contact")}>Contact Info</button>
         </div>
         <div id="socials-container">
-          <img
-            src="./assets/linkedin-image.png"
-            alt="LinkedIn"
-            className="icon"
-            onClick={() =>
-              (window.location.href =
-                "https://www.linkedin.com/in/nethmi-navodya-75b521348/")
-            }
-          />
-          <img
-            src="./assets/github-image.png"
-            alt="GitHub"
-            className="icon"
-            onClick={() =>
-              (window.location.href = "https://github.com/Nethmi922")
-            }
-          />
+          <img src="/assets/linkedin-image.png" alt="LinkedIn" className="icon"
+            onClick={() => window.open("https://www.linkedin.com/in/nethmi-navodya-75b521348/")} />
+          <img src="/assets/github-image.png" alt="GitHub" className="icon"
+            onClick={() => window.open("https://github.com/Nethmi922")} />
         </div>
       </div>
     </section>
   );
 }
 
-// ─── About Section ────────────────────────────────────────────────────────────
+/* ── About ─────────────────────────────────────────────────────────────────── */
 function About() {
   return (
     <section id="about">
@@ -161,52 +102,21 @@ function About() {
       <h1 className="title">About Me</h1>
       <div className="section-container">
         <div className="details-container">
-          <p>
-            I am a second-year Software Engineering undergraduate at the
-            University of Kelaniya, driven by a dual passion for technical
-            precision and creative expression. My journey in technology began
-            with a curiosity about how digital systems are built and secured,
-            leading me to master a versatile stack including Java, JavaScript,
-            and Web Technologies. I view code not just as a set of instructions,
-            but as a canvas for solving complex problems and creating meaningful
-            user experiences.
-          </p>
-          <p>
-            What sets my approach apart is my background in the creative arts
-            and psychology. I believe that the best software isn't just
-            functional — it should be intuitive and visually communicative.
-            Whether I am designing a responsive UI or diving into Data
-            Structures, I aim for a balance of efficiency and aesthetics.
-          </p>
+          <p>I am a second-year Software Engineering undergraduate at the University of Kelaniya, driven by a dual passion for technical precision and creative expression. My journey in technology began with a curiosity about how digital systems are built and secured, leading me to master a versatile stack including Java, JavaScript, and Web Technologies. I view code not just as a set of instructions, but as a canvas for solving complex problems and creating meaningful user experiences.</p>
+          <p>What sets my approach apart is my background in the creative arts and psychology. I believe that the best software isn't just functional — it should be intuitive and visually communicative. Whether I am designing a responsive UI or diving into Data Structures, I aim for a balance of efficiency and aesthetics.</p>
         </div>
       </div>
-      <img
-        src="./assets/arrow-image2.jpg"
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick={() => (window.location.href = "#education")}
-      />
+      <img src="/assets/arrow-image2.jpg" alt="Arrow icon" className="icon arrow" onClick={() => (window.location.href = "#education")} />
     </section>
   );
 }
 
-// ─── Education Section ────────────────────────────────────────────────────────
+/* ── Education ─────────────────────────────────────────────────────────────── */
 function Education() {
   const items = [
-    {
-      degree: "BSc (Hons) in Software Engineering",
-      period: "2025 – Present",
-      institution: "University of Kelaniya — Faculty of Science",
-      desc: "Specializing in the intersection of Cyber Security and UI/UX Engineering, building a strong foundation in software design, development, and security.",
-    },
-    {
-      degree: "GCE A/L — Physical Science",
-      period: "2023 A/L",
-      institution: "MR/Sujatha Vidyalaya",
-      desc: "Completed Mathematics, Chemistry, and Physics with distinction, achieving a Z-Score of 1.5869.",
-    },
+    { degree: "BSc (Hons) in Software Engineering", period: "2025 – Present", institution: "University of Kelaniya — Faculty of Science", desc: "Specializing in the intersection of Cyber Security and UI/UX Engineering, building a strong foundation in software design, development, and security." },
+    { degree: "GCE A/L — Physical Science", period: "2023 A/L", institution: "MR/Sujatha Vidyalaya", desc: "Completed Mathematics, Chemistry, and Physics with distinction, achieving a Z-Score of 1.5869." },
   ];
-
   return (
     <section id="education">
       <p className="section__text__p1">MY JOURNEY</p>
@@ -229,37 +139,13 @@ function Education() {
   );
 }
 
-// ─── Skills Section ───────────────────────────────────────────────────────────
+/* ── Skills ────────────────────────────────────────────────────────────────── */
 function Skills() {
   const categories = [
-    {
-      title: "Tools & Frameworks",
-      skills: [
-        { name: "Git", img: "./assets/git-images.png" },
-        { name: "GitHub", img: "./assets/github-image.png" },
-        { name: "VS Code", img: "./assets/vscode-image.png" },
-        { name: "Figma", img: "./assets/figma-image.png" },
-      ],
-    },
-    {
-      title: "Frontend Development",
-      skills: [
-        { name: "HTML", img: "./assets/html-thumbnail.jpg" },
-        { name: "CSS", img: "./assets/css-new.png" },
-        { name: "JavaScript", img: "./assets/JavaScript-image.png" },
-        { name: "Figma", img: "./assets/figma-image.png" },
-      ],
-    },
-    {
-      title: "Backend Development",
-      skills: [
-        { name: "Java", img: "./assets/java-image.png" },
-        { name: "Python", img: "./assets/python-image.png" },
-        { name: "MySQL", img: "./assets/mysql-image.png" },
-      ],
-    },
+    { title: "Tools & Frameworks", skills: [{ name: "Git", img: "/assets/git-images.png" }, { name: "GitHub", img: "/assets/github-image.png" }, { name: "VS Code", img: "/assets/vscode-image.png" }, { name: "Figma", img: "/assets/figma-image.png" }] },
+    { title: "Frontend Development", skills: [{ name: "HTML", img: "/assets/html-thumbnail.jpg" }, { name: "CSS", img: "/assets/css-new.png" }, { name: "JavaScript", img: "/assets/JavaScript-image.png" }, { name: "Figma", img: "/assets/figma-image.png" }] },
+    { title: "Backend Development", skills: [{ name: "Java", img: "/assets/java-image.png" }, { name: "Python", img: "/assets/python-image.png" }, { name: "MySQL", img: "/assets/mysql-image.png" }] },
   ];
-
   return (
     <section id="skills">
       <p className="section__text__p1">EXPLORE MY</p>
@@ -272,14 +158,8 @@ function Skills() {
               <div className="article-container-skills">
                 {cat.skills.map((skill) => (
                   <article key={skill.name}>
-                    <img
-                      src={skill.img}
-                      alt={skill.name}
-                      className="skill-icon"
-                    />
-                    <div>
-                      <h3 className="language">{skill.name}</h3>
-                    </div>
+                    <img src={skill.img} alt={skill.name} className="skill-icon" />
+                    <div><h3 className="language">{skill.name}</h3></div>
                   </article>
                 ))}
               </div>
@@ -287,34 +167,16 @@ function Skills() {
           ))}
         </div>
       </div>
-      <img
-        src="./assets/arrow-image2.jpg"
-        alt="Arrow"
-        className="icon arrow"
-        onClick={() => (window.location.href = "#projects")}
-      />
+      <img src="/assets/arrow-image2.jpg" alt="Arrow" className="icon arrow" onClick={() => (window.location.href = "#projects")} />
     </section>
   );
 }
 
-// ─── Projects Section ─────────────────────────────────────────────────────────
+/* ── Projects ──────────────────────────────────────────────────────────────── */
 function Projects() {
   const projects = [
-    {
-      title: "YouTube UI Framework: A Deep Dive into Modern CSS Layouts",
-      img: "./assets/youtube-clone.png",
-      github: "https://github.com/Nethmi922/YouTube-Clone",
-      demo: "https://nethmi922.github.io/YouTube-Clone/",
-    },
-    // 👉 Add more projects here following the same shape:
-    // {
-    //   title: "Project Name",
-    //   img: "./assets/your-image.png",
-    //   github: "https://github.com/...",
-    //   demo: "https://...",
-    // },
+    { title: "YouTube UI Framework: A Deep Dive into Modern CSS Layouts", img: "/assets/youtube-clone.png", github: "https://github.com/Nethmi922/YouTube-Clone", demo: "https://nethmi922.github.io/YouTube-Clone/" },
   ];
-
   return (
     <section id="projects">
       <p className="section__text__p1">BROWSE MY RECENT</p>
@@ -328,80 +190,161 @@ function Projects() {
               </div>
               <h2 className="experience-sub-title project-title">{p.title}</h2>
               <div className="btn-container">
-                <button
-                  className="btn btn-color-2 project-btn"
-                  onClick={() => (window.location.href = p.github)}
-                >
-                  GitHub
-                </button>
-                <button
-                  className="btn btn-color-2 project-btn"
-                  onClick={() => (window.location.href = p.demo)}
-                >
-                  Live Demo
-                </button>
+                <button className="btn btn-color-2 project-btn" onClick={() => window.open(p.github)}>GitHub</button>
+                <button className="btn btn-color-2 project-btn" onClick={() => window.open(p.demo)}>Live Demo</button>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <img
-        src="./assets/arrow-image2.jpg"
-        alt="Arrow"
-        className="icon arrow"
-        onClick={() => (window.location.href = "#contact")}
-      />
+      <img src="/assets/arrow-image2.jpg" alt="Arrow" className="icon arrow" onClick={() => (window.location.href = "#contact")} />
     </section>
   );
 }
 
-// ─── Contact Section ──────────────────────────────────────────────────────────
+/* ── Contact Form ──────────────────────────────────────────────────────────── */
 function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [focused, setFocused] = useState("");
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    // Simulate async send — replace with your EmailJS / Formspree / backend call
+    await new Promise((r) => setTimeout(r, 1800));
+    setStatus("success");
+    setTimeout(() => { setStatus("idle"); setForm({ name: "", email: "", subject: "", message: "" }); }, 4000);
+  };
+
+  const fields = [
+    { name: "name",    label: "Your Name",    type: "text",  placeholder: "Nethmi Navodya",        icon: "👤" },
+    { name: "email",   label: "Email Address", type: "email", placeholder: "you@example.com",       icon: "✉️" },
+    { name: "subject", label: "Subject",       type: "text",  placeholder: "Let's work together...", icon: "💬" },
+  ];
+
   return (
     <section id="contact">
       <p className="section__text__p1">GET IN TOUCH</p>
       <h1 className="title">Contact Me</h1>
-      <div className="contact-info-upper-container">
-        <div className="contact-info-container">
-          <img
-            src="./assets/gmail-image.jpg"
-            alt="Email"
-            className="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:nnavodya922@gmail.com">nnavodya922@gmail.com</a>
+
+      <div className="contact-wrapper">
+
+        {/* ── Left info panel ── */}
+        <div className="contact-info-panel">
+          <div className="contact-tagline">
+            <span className="contact-tagline-accent">Let's build</span>
+            <br />something amazing together
+          </div>
+          <p className="contact-info-desc">
+            Have a project in mind or just want to say hi? My inbox is always open.
+            I'll get back to you within 24 hours!
           </p>
-        </div>
-        <div className="contact-info-container">
-          <img
-            src="./assets/call-image.jpg"
-            alt="Phone"
-            className="icon contact-icon"
-          />
-          <p>+94 75 347 7364</p>
-        </div>
-        <div className="contact-info-container">
-          <img
-            src="./assets/linkedin-image.png"
-            alt="LinkedIn"
-            className="icon contact-icon"
-          />
-          <p>
-            <a
-              href="https://www.linkedin.com/in/nethmi-navodya-75b521348/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
+
+          <div className="contact-details">
+            <a href="mailto:nnavodya922@gmail.com" className="contact-detail-item">
+              <span className="contact-detail-icon">📧</span>
+              <div>
+                <p className="contact-detail-label">Email</p>
+                <p className="contact-detail-value">nnavodya922@gmail.com</p>
+              </div>
             </a>
-          </p>
+            <div className="contact-detail-item">
+              <span className="contact-detail-icon">📞</span>
+              <div>
+                <p className="contact-detail-label">Phone</p>
+                <p className="contact-detail-value">+94 75 347 7364</p>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/nethmi-navodya-75b521348/" target="_blank" rel="noreferrer" className="contact-detail-item">
+              <span className="contact-detail-icon">🔗</span>
+              <div>
+                <p className="contact-detail-label">LinkedIn</p>
+                <p className="contact-detail-value">nethmi-navodya</p>
+              </div>
+            </a>
+          </div>
+
+          <div className="contact-social-row">
+            <a href="https://github.com/Nethmi922" target="_blank" rel="noreferrer" className="contact-social-btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/nethmi-navodya-75b521348/" target="_blank" rel="noreferrer" className="contact-social-btn">LinkedIn</a>
+          </div>
+
+          {/* decorative blobs */}
+          <div className="blob blob-1" />
+          <div className="blob blob-2" />
+        </div>
+
+        {/* ── Right form panel ── */}
+        <div className="contact-form-panel">
+          {status === "success" ? (
+            <div className="form-success">
+              <div className="success-icon">🎉</div>
+              <h3 className="success-title">Message Sent!</h3>
+              <p className="success-msg">Thank you for reaching out. I'll get back to you very soon!</p>
+            </div>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit} noValidate>
+              {fields.map(({ name, label, type, placeholder, icon }) => (
+                <div className={`form-group${focused === name ? " focused" : ""}${form[name] ? " filled" : ""}`} key={name}>
+                  <label className="form-label" htmlFor={name}>
+                    <span className="form-label-icon">{icon}</span> {label}
+                  </label>
+                  <input
+                    id={name}
+                    name={name}
+                    type={type}
+                    value={form[name]}
+                    placeholder={placeholder}
+                    required
+                    className="form-input"
+                    onChange={handleChange}
+                    onFocus={() => setFocused(name)}
+                    onBlur={() => setFocused("")}
+                    disabled={status === "sending"}
+                  />
+                  <span className="form-line" />
+                </div>
+              ))}
+
+              <div className={`form-group${focused === "message" ? " focused" : ""}${form.message ? " filled" : ""}`}>
+                <label className="form-label" htmlFor="message">
+                  <span className="form-label-icon">📝</span> Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={form.message}
+                  placeholder="Tell me about your project, idea, or just say hello..."
+                  required
+                  rows={5}
+                  className="form-input form-textarea"
+                  onChange={handleChange}
+                  onFocus={() => setFocused("message")}
+                  onBlur={() => setFocused("")}
+                  disabled={status === "sending"}
+                />
+                <span className="form-line" />
+              </div>
+
+              <button type="submit" className="form-submit-btn" disabled={status === "sending"}>
+                {status === "sending" ? (
+                  <span className="btn-sending"><span className="spinner" /> Sending…</span>
+                ) : (
+                  <span>Send Message <span className="btn-arrow">→</span></span>
+                )}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>
   );
 }
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
+/* ── Footer ────────────────────────────────────────────────────────────────── */
 function Footer() {
   const links = ["about", "education", "projects", "contact"];
   return (
@@ -410,9 +353,7 @@ function Footer() {
         <div className="nav-links-container">
           <ul className="nav-links">
             {links.map((l) => (
-              <li key={l}>
-                <a href={`#${l}`}>{l.charAt(0).toUpperCase() + l.slice(1)}</a>
-              </li>
+              <li key={l}><a href={`#${l}`}>{l.charAt(0).toUpperCase() + l.slice(1)}</a></li>
             ))}
           </ul>
         </div>
@@ -422,7 +363,7 @@ function Footer() {
   );
 }
 
-// ─── Root App ─────────────────────────────────────────────────────────────────
+/* ── Root ──────────────────────────────────────────────────────────────────── */
 export default function App() {
   return (
     <>
