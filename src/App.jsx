@@ -102,8 +102,23 @@ function About() {
       <h1 className="title">About Me</h1>
       <div className="section-container">
         <div className="details-container">
-          <p>I am a second-year Software Engineering undergraduate at the University of Kelaniya, driven by a dual passion for technical precision and creative expression. My journey in technology began with a curiosity about how digital systems are built and secured, leading me to master a versatile stack including Java, JavaScript, and Web Technologies. I view code not just as a set of instructions, but as a canvas for solving complex problems and creating meaningful user experiences.</p>
-          <p>What sets my approach apart is my background in the creative arts and psychology. I believe that the best software isn't just functional — it should be intuitive and visually communicative. Whether I am designing a responsive UI or diving into Data Structures, I aim for a balance of efficiency and aesthetics.</p>
+          <p>I am a second-year Software Engineering undergraduate at the University of Kelaniya,
+             driven by a dual passion for technical precision and creative expression. My journey 
+             in technology began with a curiosity about how digital systems are built and secured,
+              leading me to master a versatile stack including Java, JavaScript, and Web Technologies.
+             I view code not just as a set of instructions, but as a canvas for solving complex
+             problems and creating meaningful user experiences.
+          </p>
+
+          <p>  </p>
+
+          <p>What sets my approach apart is my background in
+             the creative arts and psychology. I believe that the
+              best software isn't just functional - it should be 
+              intuitive and visually communicative. Whether I am designing a responsive UI
+               or diving into Data Structures, I aim for a balance of efficiency and aesthetics.
+          </p>
+
         </div>
       </div>
       <img src="/assets/arrow-image2.jpg" alt="Arrow icon" className="icon arrow" onClick={() => (window.location.href = "#education")} />
@@ -114,8 +129,8 @@ function About() {
 /* ── Education ─────────────────────────────────────────────────────────────── */
 function Education() {
   const items = [
-    { degree: "BSc (Hons) in Software Engineering", period: "2025 – Present", institution: "University of Kelaniya — Faculty of Science", desc: "Specializing in the intersection of Cyber Security and UI/UX Engineering, building a strong foundation in software design, development, and security." },
-    { degree: "GCE A/L — Physical Science", period: "2023 A/L", institution: "MR/Sujatha Vidyalaya", desc: "Completed Mathematics, Chemistry, and Physics with distinction, achieving a Z-Score of 1.5869." },
+    { degree: "BSc (Hons) in Software Engineering", period: "2025 – Present", institution: "University of Kelaniya - Faculty of Science", desc: "Specializing in the intersection of Cyber Security and UI/UX Engineering, building a strong foundation in software design, development, and security." },
+    { degree: "GCE A/L - Physical Science", period: "2023 A/L", institution: "MR/Sujatha Vidyalaya", desc: "Completed Mathematics, Chemistry, and Physics with distinction, achieving a Z-Score of 1.5869." },
   ];
   return (
     <section id="education">
