@@ -107,7 +107,7 @@ function Profile() {
     <section id="profile">
       <div className="section__pic-container">
         <img
-          src="./src/assets/office-image-black.png"
+          src="./assets/office-image-black.png"
           alt="Nethmi Navodya profile picture"
         />
       </div>
@@ -118,7 +118,7 @@ function Profile() {
         <div className="btn-container">
           <button
             className="btn btn-color-2"
-            onClick={() => window.open("./src/assets/SE_2023_045.pdf")}
+            onClick={() => window.open("./assets/SE_2023_045.pdf")}
           >
             Download CV
           </button>
@@ -131,7 +131,7 @@ function Profile() {
         </div>
         <div id="socials-container">
           <img
-            src="./src/assets/linkedin-image.png"
+            src="./assets/linkedin-image.png"
             alt="LinkedIn"
             className="icon"
             onClick={() =>
@@ -140,7 +140,7 @@ function Profile() {
             }
           />
           <img
-            src="./src/assets/github-image.png"
+            src="./assets/github-image.png"
             alt="GitHub"
             className="icon"
             onClick={() =>
@@ -181,7 +181,7 @@ function About() {
         </div>
       </div>
       <img
-        src="./src/assets/arrow-image2.jpg"
+        src="./assets/arrow-image2.jpg"
         alt="Arrow icon"
         className="icon arrow"
         onClick={() => (window.location.href = "#education")}
@@ -235,27 +235,27 @@ function Skills() {
     {
       title: "Tools & Frameworks",
       skills: [
-        { name: "Git", img: "./src/assets/git-images.png" },
-        { name: "GitHub", img: "./src/assets/github-image.png" },
-        { name: "VS Code", img: "./src/assets/vscode-image.png" },
-        { name: "Figma", img: "./src/assets/figma-image.png" },
+        { name: "Git", img: "./assets/git-images.png" },
+        { name: "GitHub", img: "./assets/github-image.png" },
+        { name: "VS Code", img: "./assets/vscode-image.png" },
+        { name: "Figma", img: "./assets/figma-image.png" },
       ],
     },
     {
       title: "Frontend Development",
       skills: [
-        { name: "HTML", img: "./src/assets/html-thumbnail.jpg" },
-        { name: "CSS", img: "./src/assets/css-new.png" },
-        { name: "JavaScript", img: "./src/assets/JavaScript-image.png" },
-        { name: "Figma", img: "./src/assets/figma-image.png" },
+        { name: "HTML", img: "./assets/html-thumbnail.jpg" },
+        { name: "CSS", img: "./assets/css-new.png" },
+        { name: "JavaScript", img: "./assets/JavaScript-image.png" },
+        { name: "Figma", img: "./assets/figma-image.png" },
       ],
     },
     {
       title: "Backend Development",
       skills: [
-        { name: "Java", img: "./src/assets/java-image.png" },
-        { name: "Python", img: "./src/assets/python-image.png" },
-        { name: "MySQL", img: "./src/assets/mysql-image.png" },
+        { name: "Java", img: "./assets/java-image.png" },
+        { name: "Python", img: "./assets/python-image.png" },
+        { name: "MySQL", img: "./assets/mysql-image.png" },
       ],
     },
   ];
@@ -288,7 +288,7 @@ function Skills() {
         </div>
       </div>
       <img
-        src="./src/assets/arrow-image2.jpg"
+        src="./assets/arrow-image2.jpg"
         alt="Arrow"
         className="icon arrow"
         onClick={() => (window.location.href = "#projects")}
@@ -302,14 +302,14 @@ function Projects() {
   const projects = [
     {
       title: "YouTube UI Framework: A Deep Dive into Modern CSS Layouts",
-      img: "./src/assets/youtube-clone.png",
+      img: "./assets/youtube-clone.png",
       github: "https://github.com/Nethmi922/YouTube-Clone",
       demo: "https://nethmi922.github.io/YouTube-Clone/",
     },
     // 👉 Add more projects here following the same shape:
     // {
     //   title: "Project Name",
-    //   img: "./src/assets/your-image.png",
+    //   img: "./assets/your-image.png",
     //   github: "https://github.com/...",
     //   demo: "https://...",
     // },
@@ -346,7 +346,7 @@ function Projects() {
         </div>
       </div>
       <img
-        src="./src/assets/arrow-image2.jpg"
+        src="./assets/arrow-image2.jpg"
         alt="Arrow"
         className="icon arrow"
         onClick={() => (window.location.href = "#contact")}
@@ -364,7 +364,7 @@ function Contact() {
       <div className="contact-info-upper-container">
         <div className="contact-info-container">
           <img
-            src="./src/assets/gmail-image.jpg"
+            src="./assets/gmail-image.jpg"
             alt="Email"
             className="icon contact-icon email-icon"
           />
@@ -374,7 +374,7 @@ function Contact() {
         </div>
         <div className="contact-info-container">
           <img
-            src="./src/assets/call-image.jpg"
+            src="./assets/call-image.jpg"
             alt="Phone"
             className="icon contact-icon"
           />
@@ -382,7 +382,7 @@ function Contact() {
         </div>
         <div className="contact-info-container">
           <img
-            src="./src/assets/linkedin-image.png"
+            src="./assets/linkedin-image.png"
             alt="LinkedIn"
             className="icon contact-icon"
           />
